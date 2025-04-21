@@ -1,0 +1,20 @@
+﻿@model DoctorDashboardViewModel
+
+@{
+    ViewData["Title"] = "Doctor Dashboard";
+}
+
+<h1>Doctor Dashboard</h1>
+
+<div class="card">
+    <div class="card-header">
+        Patient Records Overview
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Total Patient Records: @Model.TotalRecords</h5>
+        <!-- لو حابب تضيف تفاصيل أكثر مثل مرضى جدد أو آخر السجلات -->
+        <p class="card-text">You have a total of @Model.TotalRecords patient records.</p>
+    </div>
+</div>
+
+<!-- هنا تقدر تضيف أقسام أخرى إذا حابب زي المرضى الجدد أو الإحصائيات الأخرى -->

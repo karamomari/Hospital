@@ -1,0 +1,38 @@
+﻿@model List<PatientRecord>
+
+@{
+    ViewData["Title"] = "Patient Records";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null || !Model.Any())
+{
+    <p>No records found.</p>
+}
+else
+{
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Patient Name</th>
+                <th>Diagnosis</th>
+                <th>Treatment</th>
+                <th>Notes</th>
+                <th>Record Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var record in Model)
+            {
+                <tr>
+                    <td>@record.Patient?.Id</td>
+                    <td>@record.Diagnosis</td>
+                    <td>@record.Treatment</td>
+                    <td>@record.Notes</td>
+                    <td>@record.RecordDate.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
