@@ -2,36 +2,42 @@
 
 @{
     ViewData["Title"] = "Patient Record Details";
+    Layout = "_LayoutAdmin";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="mt-4 mb-3 text-primary">@ViewData["Title"]</h2>
 
 @if (Model == null)
 {
-    <p>No record found.</p>
+    <div class="alert alert-warning">No record found.</div>
 }
 else
 {
     <div class="card mb-4">
         <div class="card-header bg-primary text-white">
-            Patient Information
+            <h5 class="m-0">Patient Information</h5>
         </div>
         <div class="card-body">
-            <p><strong>Insurance:</strong> @Model.Patient?.InsuranceNo</p>
-            <p><strong>Id:</strong> @Model.Patient?.Id</p>
-            <p><strong>DOB:</strong> @Model.Patient?.DOB</p>
+            <p><strong>Insurance Number:</strong> @Model.Patient?.InsuranceNo ?? "Not Available"</p>
+            <p><strong>Patient ID:</strong> @Model.Patient?.Id</p>
+            <p><strong>Date of Birth:</strong> @Model.Patient?.DOB.ToString("yyyy-MM-dd") ?? "Not Available"</p>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-header bg-secondary text-white">
-            Medical Record
+            <h5 class="m-0">Medical Record</h5>
         </div>
         <div class="card-body">
             <p><strong>Diagnosis:</strong> @Model.Diagnosis</p>
             <p><strong>Treatment:</strong> @Model.Treatment</p>
-            <p><strong>Notes:</strong> @Model.Notes</p>
-            <p><strong>Date:</strong> @Model.RecordDate.ToString("yyyy-MM-dd")</p>
+            <p><strong>Notes:</strong> @(string.IsNullOrWhiteSpace(Model.Notes) ? "No additional notes." : Model.Notes)</p>
+            <p><strong>Record Date:</strong> @Model.RecordDate.ToString("yyyy-MM-dd")</p>
         </div>
+    </div>
+
+    <!-- Optional: Back Button -->
+    <div class="text-end">
+        <a asp-action="Records" class="btn btn-outline-secondary">Back to Records</a>
     </div>
 }

@@ -1,5 +1,7 @@
 ﻿
 
+using Hospital.Models;
+
 namespace Hospital.Repositories.Implementations
 {
     public class PatientRecordRepository : IPatientRecordRepository
@@ -13,12 +15,12 @@ namespace Hospital.Repositories.Implementations
 
         public async Task<List<PatientRecord>> GetAllAsync()
         {
-            return await _context.PatientRecords.Include(p=>p.Patient).ToListAsync();
+            return await _context.PatientRecords.Include(p=>p.Patient).ThenInclude(p=>p.User).ToListAsync();
         }
 
-        public async Task<PatientRecord?> GetByIdAsync(string id)
+        public async Task<PatientRecord?> GetByIdAsync(string RecordId)
         {
-            return await _context.PatientRecords.FindAsync(id);
+            return await _context.PatientRecords.Include(p => p.Patient).Where(p => p.Id == RecordId).FirstOrDefaultAsync();
         }
 
         public async Task<PatientRecord?> GetByPatientIdAsync(string PatientId)

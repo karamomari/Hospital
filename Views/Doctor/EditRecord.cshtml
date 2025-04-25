@@ -1,32 +1,61 @@
-﻿@model PatientRecord
+﻿@* @model PatientRecor*@
+@model PatientRecordToupdateDTO
+
 
 @{
     ViewData["Title"] = "Edit Patient Record";
+    Layout = "_LayoutAdmin";
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="mb-4">@ViewData["Title"]</h2>
 
-<form asp-action="EditRecord" method="post">
-    <input type="hidden" asp-for="Id" />
-
-    <div class="mb-3">
-        <label asp-for="Diagnosis" class="form-label"></label>
-        <input asp-for="Diagnosis" class="form-control" />
-        <span asp-validation-for="Diagnosis" class="text-danger"></span>
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <i class="bi bi-pencil-square"></i> Edit Record Details
     </div>
+    <div class="card-body">
+        <form asp-action="EditRecord" method="post">
+            <!-- Hidden ID -->
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="PatientId" />
 
-    <div class="mb-3">
-        <label asp-for="Treatment" class="form-label"></label>
-        <input asp-for="Treatment" class="form-control" />
-        <span asp-validation-for="Treatment" class="text-danger"></span>
+
+            <!-- Diagnosis -->
+            <div class="mb-3">
+                <label asp-for="Diagnosis" class="form-label">Diagnosis</label>
+                <input asp-for="Diagnosis" class="form-control" />
+                <span asp-validation-for="Diagnosis" class="text-danger"></span>
+            </div>
+
+            <!-- Treatment -->
+            <div class="mb-3">
+                <label asp-for="Treatment" class="form-label">Treatment</label>
+                <input asp-for="Treatment" class="form-control" />
+                <span asp-validation-for="Treatment" class="text-danger"></span>
+            </div>
+
+            <!-- Notes -->
+            <div class="mb-3">
+                <label asp-for="Notes" class="form-label">Notes</label>
+                <textarea asp-for="Notes" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Notes" class="text-danger"></span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-save2-fill"></i> Update
+                </button>
+                <a asp-action="Records" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle"></i> Cancel
+                </a>
+            </div>
+        </form>
     </div>
+</div>
 
-    <div class="mb-3">
-        <label asp-for="Notes" class="form-label"></label>
-        <textarea asp-for="Notes" class="form-control"></textarea>
-        <span asp-validation-for="Notes" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Update</button>
-    <a asp-action="Records" class="btn btn-secondary">Cancel</a>
-</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

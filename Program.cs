@@ -1,5 +1,6 @@
 ﻿using Hospital.Models;
 using Hospital.Repositories.Implementations;
+using Hospital.Service.AutoMappe;
 using Hospital.Service.Implementations;
 using Hospital.Service.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -42,9 +43,15 @@ namespace Hospital
             });
 
             builder.Services.AddScoped<IPatientRecordRepository, PatientRecordRepository>();
-
+            builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
+            builder.Services.AddScoped<IPatientRepository, PatientRepository>();
+            builder.Services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+            
+            builder.Services.AddScoped<IPatientService, PatientService>();
             builder.Services.AddScoped<IDoctorService, DoctorService>();
 
+
+            builder.Services.AddAutoMapper(typeof(Mappings));
 
             var app = builder.Build();
 

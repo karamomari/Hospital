@@ -1,5 +1,4 @@
-﻿
-namespace Hospital.Models
+﻿namespace Hospital.Models
 {
     public class PatientRecord
     {

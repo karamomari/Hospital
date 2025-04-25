@@ -1,41 +1,74 @@
-﻿@model PatientRecord
+﻿@model PatientRecordToAddDTO
+
 
 @{
     ViewData["Title"] = "Add Patient Record";
+    Layout = "_LayoutAdmin";
+
 }
 
-<h2>@ViewData["Title"]</h2>
+<h2 class="mb-4 text-primary"><i class="bi bi-file-earmark-plus"></i> Add New Patient Record</h2>
+
+<p class="text-muted">Please enter the patient's SSN to fetch their data before adding a record.</p>
 
 <form asp-action="AddRecord" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
 
+    <!-- Hidden input for PatientId -->
+    <input type="hidden" asp-for="PatientId" id="PatientId" />
+
+    <!-- SSN Lookup -->
     <div class="form-group">
-        <label asp-for="PatientId" class="control-label">Patient ID</label>
-        <input asp-for="PatientId" class="form-control" />
-        <span asp-validation-for="PatientId" class="text-danger"></span>
+        <label for="ssnInput">Enter Patient SSN</label>
+        <div class="input-group">
+            <input type="text" id="ssnInput" class="form-control" placeholder="e.g. 123-45-6789" />
+            <button type="button" id="checkSSN" class="btn btn-outline-info">
+                <i class="bi bi-search"></i> Check
+            </button>
+        </div>
+        <span class="text-danger" id="ssnError"></span>
     </div>
 
-    <div class="form-group">
+    <!-- Patient Preview -->
+    <div id="patientPreview" class="card mt-4 d-none border-success">
+        <div class="card-header bg-success text-white">
+            Patient Preview
+        </div>
+        <div class="card-body">
+            <p><strong>Name:</strong> <span id="previewName"></span></p>
+            <p><strong>Age:</strong> <span id="previewAge"></span></p>
+        </div>
+    </div>
+
+    <!-- Diagnosis -->
+    <div class="form-group mt-4">
         <label asp-for="Diagnosis" class="control-label">Diagnosis</label>
-        <input asp-for="Diagnosis" class="form-control" />
+        <input asp-for="Diagnosis" class="form-control" placeholder="e.g. Diabetes Type II" />
         <span asp-validation-for="Diagnosis" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <!-- Treatment -->
+    <div class="form-group mt-3">
         <label asp-for="Treatment" class="control-label">Treatment</label>
-        <input asp-for="Treatment" class="form-control" />
+        <input asp-for="Treatment" class="form-control" placeholder="e.g. Insulin therapy" />
         <span asp-validation-for="Treatment" class="text-danger"></span>
     </div>
 
-    <div class="form-group">
+    <!-- Notes -->
+    <div class="form-group mt-3">
         <label asp-for="Notes" class="control-label">Notes</label>
-        <textarea asp-for="Notes" class="form-control"></textarea>
+        <textarea asp-for="Notes" class="form-control" placeholder="Additional notes..."></textarea>
         <span asp-validation-for="Notes" class="text-danger"></span>
     </div>
 
-    <div class="form-group mt-3">
-        <button type="submit" class="btn btn-primary">Save Record</button>
-        <a asp-action="Records" class="btn btn-secondary">Back</a>
+    <!-- Buttons -->
+    <div class="form-group mt-4">
+        <button type="submit" class="btn btn-success">
+            <i class="bi bi-save"></i> Save Record
+        </button>
+        <a asp-action="Dashboard" class="btn btn-secondary">
+            <i class="bi bi-arrow-left"></i> Back
+        </a>
     </div>
 </form>
 
@@ -43,4 +76,37 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+        const checkBtn = document.getElementById("checkSSN");
+        checkBtn.addEventListener("click", function () {
+            const ssn = document.getElementById("ssnInput").value;
+            const preview = document.getElementById("patientPreview");
+            const error = document.getElementById("ssnError");
+
+            checkBtn.disabled = true;
+            checkBtn.innerHTML = `<span class="spinner-border spinner-border-sm"></span> Checking...`;
+
+            fetch(`/Doctor/GetBySSN?ssn=${encodeURIComponent(ssn)}`)
+                .then(res => {
+                    checkBtn.disabled = false;
+                    checkBtn.innerHTML = `<i class="bi bi-search"></i> Check`;
+
+                    if (!res.ok) throw new Error("Patient not found");
+                    return res.json();
+                })
+                .then(data => {
+                    document.getElementById("previewName").textContent = data.fullName;
+                    document.getElementById("previewAge").textContent = data.age;
+                    document.getElementById("PatientId").value = data.id;
+                    preview.classList.remove("d-none");
+                    error.textContent = "";
+                })
+                .catch(err => {
+                    error.textContent = "Patient not found!";
+                    preview.classList.add("d-none");
+                    document.getElementById("PatientId").value = "";
+                });
+        });
+    </script>
 }

@@ -7,6 +7,7 @@ namespace Hospital.Models
         public string Id { get; set; }
         public DateTime DOB { get; set; }
         public string InsuranceNo { get; set; }
+        public string SSN { get; set; }
 
         [ForeignKey("User")]
         public string UserId { get; set; }

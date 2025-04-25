@@ -1,5 +1,8 @@
-﻿using Hospital.Controllers;
+﻿using AutoMapper;
+using Hospital.Controllers;
 using Hospital.Service.Interfaces;
+using Hospital.ViewModel.PatientRecord;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Hospital.Service.Implementations
 {
@@ -7,29 +10,47 @@ namespace Hospital.Service.Implementations
     {
         private readonly IPatientRecordRepository _recordRepo;
         private readonly ILogger<AccountController> _logger;
-        public DoctorService(IPatientRecordRepository recordRepo, ILogger<AccountController> logger)
+        private readonly IDoctorRepository doctorRepository;
+        private readonly IAppointmentRepository _appointmentRepo;
+        private readonly IMapper _mapper;
+
+        public DoctorService(IPatientRecordRepository recordRepo, ILogger<AccountController> logger, IDoctorRepository doctorRepository, 
+            IMapper mapper, IAppointmentRepository appointmentRepo)
         {
             _recordRepo = recordRepo;
             _logger = logger;
+            this.doctorRepository = doctorRepository;
+            _mapper = mapper;
+            _appointmentRepo = appointmentRepo;
         }
 
-        public async Task<List<PatientRecord>> GetRecordsForDoctorAsync(string doctorId)
+        public async Task<List<PatientRecord>> GetRecordsForDoctorAsync(string userId)
         {
             var records = await _recordRepo.GetAllAsync();
-            return records.Where(r => r.DoctorId == doctorId).ToList();
+            var doctor =await doctorRepository.GetByUserIdAsync(userId);
+            return records.Where(r => r.DoctorId == doctor.Id).ToList();
         }
 
-        public async Task<PatientRecord> GetOneRecordsForDoctorAsync(string patientId)
+        public async Task<PatientRecord> GetOneRecordsForDoctorAsync(string RecordId)
         {
-            var Record= await _recordRepo.GetByPatientIdAsync(patientId);
+            var Record= await _recordRepo.GetByIdAsync(RecordId);
             return Record;
         }
 
+        public async Task<List<Appointment>> CountAppointmentsByDoctorIdAsync(string userId)
+        {
+            var Appointments = await _appointmentRepo.GetAllAsync();
+            var doctor = await doctorRepository.GetByUserIdAsync(userId);
+            return Appointments.Where(r => r.DoctorId == doctor.Id).ToList();
 
-        public async Task<bool> AddPatientRecordAsync(PatientRecord record)
+        }
+
+        public async Task<bool> AddPatientRecordAsync(PatientRecord record,string UserId)
         {
             try
             {
+                var doctor= await doctorRepository.GetByUserIdAsync(UserId);
+                record.DoctorId = doctor.Id;
                 record.Id = Guid.NewGuid().ToString();
                 record.RecordDate = DateTime.UtcNow;
 
@@ -46,42 +67,26 @@ namespace Hospital.Service.Implementations
             }
         }
 
-        public async Task UpdateRecordAsync(PatientRecord updatedRecord)
+        public async Task UpdateRecordAsync(PatientRecordToupdateDTO updatedRecord)
         {
             var existingRecord = await _recordRepo.GetByIdAsync(updatedRecord.Id);
 
             if (existingRecord == null)
                 throw new Exception("Record not found.");
 
-            bool isModified = false;
+            _mapper.Map(updatedRecord, existingRecord);
+            existingRecord.RecordDate = DateTime.UtcNow;
+            await _recordRepo.SaveChangesAsync();
 
-            if (!string.IsNullOrEmpty(existingRecord.Diagnosis) && existingRecord.Diagnosis != updatedRecord.Diagnosis)
-            {
-                existingRecord.Diagnosis = updatedRecord.Diagnosis;
-                isModified = true;
-            }
-
-            // فحص الـ null أو القيمة الفارغة 
-            if (existingRecord.Treatment != updatedRecord.Treatment)
-            {
-                existingRecord.Treatment = updatedRecord.Treatment;
-                isModified = true;
-            }
-
-            // فحص الـ null أو القيمة الفارغة
-            if (!string.IsNullOrEmpty(existingRecord.Notes) && existingRecord.Notes != updatedRecord.Notes)
-            {
-                existingRecord.Notes = updatedRecord.Notes;
-                isModified = true;
-            }
-
-            if (isModified)
-            {
-                existingRecord.RecordDate = DateTime.UtcNow;
-                await _recordRepo.SaveChangesAsync();
-            }
         }
 
+
+        public async Task<IEnumerable<Appointment>> MyAppointments(string userId)
+        {
+            var doctor=await doctorRepository.GetByUserIdAsync(userId);
+            var appointments = await _appointmentRepo.GetAppointmentsByDoctorIdAsync(doctor.Id);
+            return appointments;
+        }
 
     }
 }

@@ -6,7 +6,7 @@ namespace Hospital.Repositories.Interfaces
     {
 
         Task<List<PatientRecord>> GetAllAsync();
-        Task<PatientRecord?> GetByIdAsync(string id);
+        Task<PatientRecord?> GetByIdAsync(string RecordId);
         Task<PatientRecord?> GetByPatientIdAsync(string PatientId);
         Task AddAsync(PatientRecord record);
         Task SaveChangesAsync();

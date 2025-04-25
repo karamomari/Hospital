@@ -2,19 +2,97 @@
 
 @{
     ViewData["Title"] = "Doctor Dashboard";
+    Layout = "_LayoutAdmin";
 }
 
-<h1>Doctor Dashboard</h1>
+<h1 class="mb-4">👨‍⚕️ Doctor Dashboard</h1>
 
-<div class="card">
-    <div class="card-header">
-        Patient Records Overview
+
+<div class="row">
+
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">📅 My Appointments</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalAppointments</h5>
+                <p class="card-text">Total appointments scheduled with you.</p>
+                <a asp-action="MyAppointments" asp-controller="Doctor" class="btn btn-light btn-sm">View My Appointments</a>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <h5 class="card-title">Total Patient Records: @Model.TotalRecords</h5>
-        <!-- لو حابب تضيف تفاصيل أكثر مثل مرضى جدد أو آخر السجلات -->
-        <p class="card-text">You have a total of @Model.TotalRecords patient records.</p>
+
+
+    <!-- ✅ إحصائيات السجلات -->
+    <div class="col-md-4">
+        <div class="card text-white bg-info mb-3">
+            <div class="card-header">📁 Patient Records</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalRecords</h5>
+                <p class="card-text">Total records you have created.</p>
+                <a asp-action="Records" asp-controller="Doctor" class="btn btn-light btn-sm">View All Records</a>
+            </div>
+        </div>
     </div>
+
+    <!-- ✅ إضافة سجل جديد -->
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">➕ Add New Record</div>
+            <div class="card-body">
+                <p class="card-text">Quickly add a new patient record.</p>
+                <a asp-action="AddRecord" asp-controller="Doctor" class="btn btn-light btn-sm">
+                    <i class="bi bi-plus-circle"></i> Add Record
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ البحث عن مريض -->
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">🔍 Find Patient by SSN</div>
+            <div class="card-body">
+                <form asp-controller="Doctor" asp-action="GetBySSN" method="get" onsubmit="return findPatient(event)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter SSN..." id="ssnInput" />
+                        <button class="btn btn-dark" type="submit">Search</button>
+                    </div>
+                </form>
+                <div id="patientResult" class="mt-2 small text-dark"></div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
-<!-- هنا تقدر تضيف أقسام أخرى إذا حابب زي المرضى الجدد أو الإحصائيات الأخرى -->
+@section Scripts {
+    <script>
+        async function findPatient(event) {
+            event.preventDefault();
+            const ssn = document.getElementById("ssnInput").value;
+            const resultDiv = document.getElementById("patientResult");
+
+            if (!ssn) {
+                resultDiv.innerHTML = "❗ Please enter an SSN.";
+                return;
+            }
+
+            try {
+                const response = await fetch(`/Doctor/GetBySSN?ssn=${ssn}`);
+                if (!response.ok) {
+                    resultDiv.innerHTML = "❌ Patient not found.";
+                    return;
+                }
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                    ✅ <strong>${data.fullName}</strong><br/>
+                    🆔 ID: ${data.id}<br/>
+                    🎂 DOB: ${data.age}
+                `;
+            } catch (error) {
+                resultDiv.innerHTML = "⚠️ Error fetching patient data.";
+            }
+        }
+    </script>
+}

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AppointmentToViewDTO>
+
+@{
+    ViewData["Title"] = "My Appointments";
+    Layout = "_LayoutAdmin";
+}
+
+<h2 class="text-primary"><i class="bi bi-calendar-check"></i> My Appointments</h2>
+
+<table class="table table-bordered mt-4">
+    <thead class="table-success">
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Patient</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@item.Status</td>
+                <td>@item.PatientFullName</td>
+                <td>@item.Notes</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,3 +9,9 @@ global using Hospital.Models;
 global using Hospital.Repositories.Interfaces;
 global using Hospital.ViewModel;
 global using Hospital.ViewModel.Doctor;
+global using Hospital.ViewModel.PatientRecord;
+global using Hospital.ViewModel.Patient;
+global using Hospital.ViewModel.Appointment;
+
+
+

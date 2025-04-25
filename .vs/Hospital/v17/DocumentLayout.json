@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\doctor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\doctor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Doctor\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Doctor\\Dashboard.cshtml",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAowBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T19:52:37.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DoctorController.cs",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\DoctorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DoctorController.cs",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\DoctorController.cs",
+              "RelativeToolTip": "Controllers\\DoctorController.cs",
+              "ViewState": "AQIAAJQAAAAAAAAAAAAgwKgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T18:59:43.445Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
