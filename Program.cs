@@ -49,6 +49,8 @@ namespace Hospital
             
             builder.Services.AddScoped<IPatientService, PatientService>();
             builder.Services.AddScoped<IDoctorService, DoctorService>();
+            builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+            builder.Services.AddScoped<IReceptionService, ReceptionService>();
 
 
             builder.Services.AddAutoMapper(typeof(Mappings));

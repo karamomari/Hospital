@@ -34,6 +34,11 @@
             await _context.SaveChangesAsync();
         }
 
+        public async Task<int> CountAsync()
+        {
+            return await _context.Appointments.CountAsync();
+        }
+
         public async Task UpdateAsync(Appointment appointment)
         {
             _context.Appointments.Update(appointment);
@@ -58,5 +63,21 @@
                 .ToListAsync();
         }
 
+
+        public async Task<List<Appointment>> GetUpcomingAppointmentsAsync()
+        {
+            return await _context.Appointments
+                //.Where(a => a.AppointmentDate > DateTime.Now && a.Status == "Scheduled")
+                .Include(a => a.Patient)
+                .Include(a => a.Doctor)
+                .OrderBy(a => a.AppointmentDate)
+                .ToListAsync();
+        }
+
+
+
+
     }
+
+
 }

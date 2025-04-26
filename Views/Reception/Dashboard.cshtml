@@ -1,0 +1,83 @@
+﻿@model ReceptionDashboardViewModel
+
+@{
+    ViewData["Title"] = "Secretary Dashboard";
+}
+
+<h1 class="mb-4">👩‍💼 Reception Dashboard</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">👥 Total Patients</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalPatients</h5>
+                <p class="card-text">Number of registered patients.</p>
+                <a asp-action="Patients" asp-controller="Reception" class="btn btn-light btn-sm">View Patients</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">📅 Total Appointments</div>
+            <div class="card-body">
+                <h5 class="card-title">@Model.TotalAppointments</h5>
+                <p class="card-text">Number of scheduled appointments.</p>
+                <a asp-action="Appointments" asp-controller="Reception" class="btn btn-light btn-sm">View Appointments</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="col-md-4">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">🔍 Find Patient by SSN</div>
+            <div class="card-body">
+                <form asp-controller="Reception" asp-action="GetBySSN" method="get" onsubmit="return findPatient(event)">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter SSN..." id="ssnInput" />
+                        <button class="btn btn-dark" type="submit">Search</button>
+                    </div>
+                </form>
+                <div id="patientResult" class="mt-2 small text-dark"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+@section Scripts {
+    <script>
+        async function findPatient(event) {
+            event.preventDefault();
+            const ssn = document.getElementById("ssnInput").value;
+            const resultDiv = document.getElementById("patientResult");
+
+            if (!ssn) {
+                resultDiv.innerHTML = "❗ Please enter an SSN.";
+                return;
+            }
+
+            try {
+                const response = await fetch(`/Reception/GetBySSN?ssn=${ssn}`);
+                if (!response.ok) {
+                    resultDiv.innerHTML = "❌ Patient not found.";
+                    return;
+                }
+                const data = await response.json();
+                resultDiv.innerHTML = `
+                            ✅ <strong>${data.fullName}</strong><br/>
+                            🆔 ID: ${data.id}<br/>
+                            🎂 DOB: ${data.age}
+                        `;
+            } catch (error) {
+                resultDiv.innerHTML = "⚠️ Error fetching patient data.";
+            }
+        }
+    </script>
+}
+

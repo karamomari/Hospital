@@ -30,6 +30,16 @@ namespace Hospital.Service.AutoMappe
             CreateMap<PatientRecord, PatientRecordToupdateDTO>();
             CreateMap<PatientRecordToAddDTO, PatientRecord>();
 
+
+            CreateMap<Appointment, AppointmentToViewDTO>()
+    .ForMember(dest => dest.PatientFullName, opt => opt.MapFrom(src => src.Patient.User.FirstName + " " + src.Patient.User.LastName))
+    .ForMember(dest => dest.DoctorFullName, opt => opt.MapFrom(src => src.Doctor.User.FirstName + " " + src.Doctor.User.LastName));
+
+            CreateMap<Appointment, Appointment>();
+            CreateMap<Patient, PatientToViewDTO>()
+                .ForMember(dest => dest.FullName, opt => opt.MapFrom(p => p.User.FirstName + " " + p.User.LastName));
+
+
         }
     }
 }

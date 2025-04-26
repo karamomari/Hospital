@@ -12,6 +12,8 @@ global using Hospital.ViewModel.Doctor;
 global using Hospital.ViewModel.PatientRecord;
 global using Hospital.ViewModel.Patient;
 global using Hospital.ViewModel.Appointment;
+global using Hospital.ViewModel.Reception;
+
 
 
 

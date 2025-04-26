@@ -18,6 +18,8 @@ namespace Hospital.Repositories.Implementations
             return await _context.PatientRecords.Include(p=>p.Patient).ThenInclude(p=>p.User).ToListAsync();
         }
 
+ 
+
         public async Task<PatientRecord?> GetByIdAsync(string RecordId)
         {
             return await _context.PatientRecords.Include(p => p.Patient).Where(p => p.Id == RecordId).FirstOrDefaultAsync();

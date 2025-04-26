@@ -1,0 +1,97 @@
+﻿@model AppointmentToAddDTO
+
+@{
+    ViewData["Title"] = "Add New Appointment";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow rounded-4">
+                <div class="card-header bg-primary text-white text-center rounded-top-4">
+                    <h4>Add New Appointment</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="AddAppointment" method="post">
+
+                        <div class="mb-3">
+                            <label for="ssnInput" class="form-label">Enter Patient SSN</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="ssnInput" placeholder="e.g. 1234567890" />
+                                <button type="button" class="btn btn-dark" onclick="findPatient()">Search</button>
+                            </div>
+                            <div id="patientInfo" class="form-text mt-2 text-success fw-bold"></div>
+                            <input type="hidden" asp-for="PatientId" id="patientIdInput" />
+                            <span asp-validation-for="PatientId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DoctorId" class="form-label">Doctor</label>
+                            <select asp-for="DoctorId" class="form-select">
+                                <option disabled selected value="">-- Select Doctor --</option>
+                                @* Dynamically load doctors here *@
+                            </select>
+                            <span asp-validation-for="DoctorId" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="AppointmentDate" class="form-label">Appointment Date & Time</label>
+                            <input asp-for="AppointmentDate" type="datetime-local" class="form-control" />
+                            <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Notes" class="form-label">Notes (optional)</label>
+                            <textarea asp-for="Notes" class="form-control" rows="3"></textarea>
+                            <span asp-validation-for="Notes" class="text-danger"></span>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-success px-4">Add Appointment</button>
+                            <a asp-action="Dashboard" class="btn btn-secondary ms-2">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        async function findPatient() {
+            const ssn = document.getElementById("ssnInput").value;
+            const info = document.getElementById("patientInfo");
+            const hiddenInput = document.getElementById("patientIdInput");
+
+            info.textContent = "";
+            hiddenInput.value = "";
+
+            if (!ssn) {
+                info.textContent = "❗ Please enter an SSN.";
+                info.classList.replace("text-success", "text-danger");
+                return;
+            }
+
+            try {
+                const response = await fetch(`/Doctor/GetBySSN?ssn=${ssn}`);
+                if (!response.ok) {
+                    info.textContent = "❌ Patient not found.";
+                    info.classList.replace("text-success", "text-danger");
+                    return;
+                }
+
+                const data = await response.json();
+                hiddenInput.value = data.id;
+                info.innerHTML = `✅ Found: <strong>${data.fullName}</strong> | DOB: ${data.age}`;
+                info.classList.replace("text-danger", "text-success");
+
+            } catch (err) {
+                info.textContent = "⚠️ Error while searching.";
+                info.classList.replace("text-success", "text-danger");
+            }
+        }
+    </script>
+
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
