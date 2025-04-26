@@ -4,6 +4,7 @@ global using System.ComponentModel.DataAnnotations.Schema;
 global using Microsoft.EntityFrameworkCore;
 global using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 global using System.ComponentModel.DataAnnotations;
+global using System.Security.Claims;
 
 global using Hospital.Models;
 global using Hospital.Repositories.Interfaces;

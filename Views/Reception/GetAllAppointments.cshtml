@@ -1,0 +1,34 @@
+﻿@model List<AppointmentToViewDTO>
+@{
+    
+    ViewData["Title"] = "Appointments";
+    Layout = "_LayoutReception.cshtml";
+
+}
+
+<h2 class="text-primary">All Appointments</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Notes</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var appt in Model)
+        {
+            <tr>
+                <td>@appt.PatientFullName</td>
+                <td>@appt.DoctorFullName</td>
+                <td>@appt.AppointmentDate.ToString("dd MMM yyyy - hh:mm tt")</td>
+                <td>@appt.Status</td>
+                <td>@appt.Notes</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

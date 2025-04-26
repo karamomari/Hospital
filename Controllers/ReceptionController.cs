@@ -9,12 +9,14 @@ namespace Hospital.Controllers
         private readonly IAppointmentService _appointmentService;
         private readonly IPatientService _patientService;
         private readonly IReceptionService _secretaryService;
+        private readonly IDoctorService _doctorService;
 
-        public ReceptionController(IAppointmentService appointmentService, IPatientService patientService, IReceptionService secretaryService)
+        public ReceptionController(IAppointmentService appointmentService, IPatientService patientService, IReceptionService secretaryService, IDoctorService doctorService)
         {
             _appointmentService = appointmentService;
             _patientService = patientService;
             _secretaryService = secretaryService;
+            _doctorService = doctorService;
         }
 
         public async Task<IActionResult> Dashboard()
@@ -29,8 +31,14 @@ namespace Hospital.Controllers
             return View(model);
         }
 
-  
 
+        public async Task<IActionResult> GetAllAppointments()
+        {
+            var list =await _appointmentService.GetAllAppointmentsAsync();
+            return View(list);
+
+        }
+        // 0 referencses
         public IActionResult AddAppointment() => View();
 
         [HttpPost]
@@ -62,18 +70,18 @@ namespace Hospital.Controllers
 
 
 
-        //[HttpGet]
-        //public IActionResult GetDoctors()
-        //{
-        //    var doctors = _doctorService.GetAll(); // أو حسب الطريقة يلي عندك
-        //    var result = doctors.Select(d => new
-        //    {
-        //        id = d.Id,
-        //        fullName = $"{d.User.FirstName} {d.User.LastName}"
-        //    });
+        [HttpGet]
+        public async Task<IActionResult> GetDoctors()
+        {
+            var doctors = await _doctorService.GetAll(); 
+            var result = doctors.Select(d => new
+            {
+                id = d.Id,
+                fullName = $"{d.User.FirstName} {d.User.LastName}"
+            });
 
-        //    return Json(result);
-        //}
+            return Json(result);
+        }
 
     }
 }

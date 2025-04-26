@@ -10,7 +10,7 @@ namespace Hospital.Service.Interfaces
         Task<PatientRecord> GetOneRecordsForDoctorAsync(string RecordId);
         Task<bool> AddPatientRecordAsync(PatientRecord record, string UserId);
         Task UpdateRecordAsync(PatientRecordToupdateDTO updatedRecord);
-
+        Task<IEnumerable<Doctor>> GetAll();
        Task<IEnumerable<Appointment>> MyAppointments(string userId);
 
 

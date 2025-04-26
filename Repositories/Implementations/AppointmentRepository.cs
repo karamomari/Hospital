@@ -68,8 +68,8 @@
         {
             return await _context.Appointments
                 //.Where(a => a.AppointmentDate > DateTime.Now && a.Status == "Scheduled")
-                .Include(a => a.Patient)
-                .Include(a => a.Doctor)
+                .Include(a => a.Patient).ThenInclude(p => p.User)
+                .Include(a => a.Doctor).ThenInclude(d => d.User)
                 .OrderBy(a => a.AppointmentDate)
                 .ToListAsync();
         }

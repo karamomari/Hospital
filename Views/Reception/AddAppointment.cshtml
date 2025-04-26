@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Add New Appointment";
+    Layout = "_LayoutReception.cshtml";
 }
 
 <div class="container mt-5">
@@ -27,10 +28,10 @@
 
                         <div class="mb-3">
                             <label asp-for="DoctorId" class="form-label">Doctor</label>
-                            <select asp-for="DoctorId" class="form-select">
+                            <select asp-for="DoctorId" class="form-select" id="doctorSelect">
                                 <option disabled selected value="">-- Select Doctor --</option>
-                                @* Dynamically load doctors here *@
                             </select>
+
                             <span asp-validation-for="DoctorId" class="text-danger"></span>
                         </div>
 
@@ -91,6 +92,26 @@
                 info.classList.replace("text-success", "text-danger");
             }
         }
+        //____________
+
+        async function loadDoctors() {
+            const select = document.getElementById("doctorSelect");
+            try {
+                const response = await fetch('/Reception/GetDoctors');
+                const data = await response.json();
+
+                data.forEach(doc => {
+                    const option = document.createElement("option");
+                    option.value = doc.id;
+                    option.textContent = doc.fullName;
+                    select.appendChild(option);
+                });
+            } catch (err) {
+                console.error("Error loading doctors:", err);
+            }
+        }
+        document.addEventListener("DOMContentLoaded", loadDoctors);
+
     </script>
 
     @await Html.PartialAsync("_ValidationScriptsPartial")

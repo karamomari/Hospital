@@ -31,5 +31,8 @@ namespace Hospital.Service.Implementations
             var appointments = await _appointmentRepo.GetUpcomingAppointmentsAsync();
             return _mapper.Map<List<AppointmentToViewDTO>>(appointments);
         }
+
+
+       
     }
 }

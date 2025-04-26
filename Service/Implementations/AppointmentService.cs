@@ -7,11 +7,13 @@ namespace Hospital.Service.Implementations
     {
         private readonly MvcHospitalcontext _context;
         private readonly IMapper _mapper;
+        private readonly IAppointmentRepository _appointmentRepository;
 
-        public AppointmentService(MvcHospitalcontext context, IMapper mapper)
+        public AppointmentService(MvcHospitalcontext context, IMapper mapper,IAppointmentRepository appointmentRepository)
         {
             _context = context;
             _mapper = mapper;
+            _appointmentRepository = appointmentRepository;
         }
 
         public async Task<List<AppointmentToViewDTO>> GetAllAppointmentsAsync()
@@ -27,9 +29,7 @@ namespace Hospital.Service.Implementations
         public async Task AddAppointmentAsync(AppointmentToAddDTO dto)
         {
             var appointment = _mapper.Map<Appointment>(dto);
-            appointment.Id = Guid.NewGuid().ToString();
-            _context.Appointments.Add(appointment);
-            await _context.SaveChangesAsync();
+            await _appointmentRepository.AddAsync(appointment);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Hospital.Repositories.Implementations
 
         public async Task<List<Doctor>> GetAllAsync()
         {
-              return await _context.Doctors.ToListAsync();
+              return await _context.Doctors.Include(d=>d.User).ToListAsync();
         }
 
         public async Task<Doctor?> GetByIdAsync(string id)

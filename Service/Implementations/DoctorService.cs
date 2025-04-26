@@ -23,7 +23,6 @@ namespace Hospital.Service.Implementations
             _mapper = mapper;
             _appointmentRepo = appointmentRepo;
         }
-
         public async Task<List<PatientRecord>> GetRecordsForDoctorAsync(string userId)
         {
             var records = await _recordRepo.GetAllAsync();
@@ -87,6 +86,9 @@ namespace Hospital.Service.Implementations
             var appointments = await _appointmentRepo.GetAppointmentsByDoctorIdAsync(doctor.Id);
             return appointments;
         }
-
+        public async Task<IEnumerable<Doctor>> GetAll()
+        {
+              return await  doctorRepository.GetAllAsync();
+        }
     }
 }

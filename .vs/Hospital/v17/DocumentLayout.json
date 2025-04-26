@@ -1,105 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\service\\implementations\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:service\\implementations\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\controllers\\receptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:controllers\\receptioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\reception\\addappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\reception\\addappointment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\viewmodel\\appointment\\appointmenttoadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:viewmodel\\appointment\\appointmenttoadddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\reception\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\reception\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DoctorService.cs",
-              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Service\\Implementations\\DoctorService.cs",
-              "RelativeDocumentMoniker": "Service\\Implementations\\DoctorService.cs",
-              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Service\\Implementations\\DoctorService.cs",
-              "RelativeToolTip": "Service\\Implementations\\DoctorService.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAkAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T13:37:24.52Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AppointmentToAddDTO.cs",
-              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\ViewModel\\Appointment\\AppointmentToAddDTO.cs",
-              "RelativeDocumentMoniker": "ViewModel\\Appointment\\AppointmentToAddDTO.cs",
-              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\ViewModel\\Appointment\\AppointmentToAddDTO.cs",
-              "RelativeToolTip": "ViewModel\\Appointment\\AppointmentToAddDTO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T20:28:13.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddAppointment.cshtml",
-              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\AddAppointment.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reception\\AddAppointment.cshtml",
-              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\AddAppointment.cshtml",
-              "RelativeToolTip": "Views\\Reception\\AddAppointment.cshtml",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAAAsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T20:08:44.956Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReceptionController.cs",
-              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\ReceptionController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReceptionController.cs",
-              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\ReceptionController.cs",
-              "RelativeToolTip": "Controllers\\ReceptionController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAowEQAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T19:57:58.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reception\\Dashboard.cshtml",
-              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Reception\\Dashboard.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T18:10:46.085Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

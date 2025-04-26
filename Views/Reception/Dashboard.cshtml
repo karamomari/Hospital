@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Secretary Dashboard";
+    Layout = "_LayoutReception.cshtml";
+
 }
 
 <h1 class="mb-4">👩‍💼 Reception Dashboard</h1>
@@ -24,7 +26,7 @@
             <div class="card-body">
                 <h5 class="card-title">@Model.TotalAppointments</h5>
                 <p class="card-text">Number of scheduled appointments.</p>
-                <a asp-action="Appointments" asp-controller="Reception" class="btn btn-light btn-sm">View Appointments</a>
+                <a asp-action="GetAllAppointments" asp-controller="Reception" class="btn btn-light btn-sm">View Appointments</a>
             </div>
         </div>
     </div>
@@ -78,6 +80,17 @@
                 resultDiv.innerHTML = "⚠️ Error fetching patient data.";
             }
         }
+
+
+
+        //______________________________
+
+      
+
+        // نحمل الدكاترة لما الصفحة تجهز
     </script>
+
+
+
 }
 
