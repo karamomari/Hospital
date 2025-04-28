@@ -38,7 +38,7 @@ namespace Hospital.Service.AutoMappe
             CreateMap<Appointment, Appointment>();
             CreateMap<Patient, PatientToViewDTO>()
                 .ForMember(dest => dest.FullName, opt => opt.MapFrom(p => p.User.FirstName + " " + p.User.LastName));
-
+            CreateMap<Appointment, AppointmentToViewDTO>();
 
         }
     }

@@ -1,8 +1,112 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    Layout = "_LayoutCustem";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid bg-primary text-white py-5">
+    <div class="container text-center">
+        <h1 class="display-3">Welcome to Our Hospital</h1>
+        <p class="lead">Your health, our priority. We are dedicated to providing the best care possible.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="/Account/Login" class="btn btn-light btn-lg">Login</a>
+            <a href="/Account/Register" class="btn btn-outline-light btn-lg">Register</a>
+        </div>
+    </div>
 </div>
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">About Us</h2>
+        <p class="lead">Our hospital provides world-class medical services with a compassionate touch. Our dedicated staff and cutting-edge technology ensure that you receive the best care available.</p>
+        <a href="/about" class="btn btn-primary">Learn More</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">Our Services</h2>
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="/image/istockphoto-151811860-612x612.jpg" class="card-img-top" alt="Service 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Emergency Care</h5>
+                        <p class="card-text">Our emergency care department is equipped to handle all medical emergencies with utmost care.</p>
+                        <a href="/services/emergency" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="/image/18.png" class="card-img-top" alt="Service 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Maternity Care</h5>
+                        <p class="card-text">Our maternity ward is designed to make the childbirth experience safe and comfortable for both mother and baby.</p>
+                        <a href="/services/maternity" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                    <img src="/image/general-surgery.jpg" class="card-img-top" alt="Service 3">
+                    <div class="card-body">
+                        <h5 class="card-title">General Surgery</h5>
+                        <p class="card-text">Our experienced surgeons are here to provide the best possible care for all types of surgeries.</p>
+                        <a href="/services/surgery" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">What Our Patients Say</h2>
+        <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <p class="lead">"The care I received was exceptional. The staff was compassionate and attentive throughout my stay."</p>
+                    <footer class="blockquote-footer">John Doe, <cite title="Source Title">Patient</cite></footer>
+                </div>
+                <div class="carousel-item">
+                    <p class="lead">"I am so grateful for the professional and caring doctors who helped me through a tough surgery."</p>
+                    <footer class="blockquote-footer">Jane Smith, <cite title="Source Title">Patient</cite></footer>
+                </div>
+                <div class="carousel-item">
+                    <p class="lead">"Amazing experience from start to finish. The hospital is very modern and the staff is top-notch."</p>
+                    <footer class="blockquote-footer">Sara Williams, <cite title="Source Title">Patient</cite></footer>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container text-center">
+        <h2 class="display-4 mb-4">Contact Us</h2>
+        <p class="lead">Feel free to reach out to us for any inquiries. We are here to help you!</p>
+        <a href="/contact" class="btn btn-primary">Contact Us</a>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="bg-primary text-white py-4 text-center">
+    <p>&copy; 2025 Our Hospital. All Rights Reserved.</p>
+</footer>
+

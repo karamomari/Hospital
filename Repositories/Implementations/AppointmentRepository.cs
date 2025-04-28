@@ -64,6 +64,15 @@
         }
 
 
+        public async Task<IEnumerable<Appointment>> GetAppointmentsByPatientIdAsync(string patientId)
+        {
+            return await _context.Appointments
+                .Include(a => a.Patient).ThenInclude(u => u.User)
+                .Include(d=>d.Doctor).ThenInclude(u=>u.User)
+                .Where(a => a.PatientId == patientId)
+                .ToListAsync();
+        }
+
         public async Task<List<Appointment>> GetUpcomingAppointmentsAsync()
         {
             return await _context.Appointments
@@ -76,7 +85,30 @@
 
 
 
+        public async Task<List<Appointment>> GetUpcomingAppointmentsForPatientAsync(string patientId)
+        {
+            return await _context.Appointments
+                .Where(a => a.PatientId == patientId && a.AppointmentDate >= DateTime.Now)
+                .OrderBy(a => a.AppointmentDate)
+                .ToListAsync();
+        }
 
+        public async Task<List<Appointment>> GetPastAppointmentsForPatientAsync(string patientId)
+        {
+            return await _context.Appointments
+                .Where(a => a.PatientId == patientId && a.AppointmentDate < DateTime.Now)
+                .OrderByDescending(a => a.AppointmentDate)
+                .ToListAsync();
+        }
+
+        public async Task<List<string>> GetUniqueDoctorsVisitedAsync(string patientId)
+        {
+            return await _context.Appointments
+                .Where(a => a.PatientId == patientId && a.DoctorId != null)
+                .Select(a => a.DoctorId)
+                .Distinct()
+                .ToListAsync();
+        }
     }
 
 

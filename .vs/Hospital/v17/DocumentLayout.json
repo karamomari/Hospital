@@ -1,12 +1,156 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\shared\\_layoutcustem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\shared\\_layoutcustem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\reception\\_layoutreception.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\reception\\_layoutreception.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\doctor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\doctor\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\doctor\\_layoutdoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\doctor\\_layoutdoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|c:\\users\\karam\\onedrive\\desktop\\new projects\\hospital\\views\\patient\\_layoutpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9A2A28D4-F989-4C9F-90BC-469AEEF8880B}|Hospital.csproj|solutionrelative:views\\patient\\_layoutpatient.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LayoutCustem.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Shared\\_LayoutCustem.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LayoutCustem.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Shared\\_LayoutCustem.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LayoutCustem.cshtml",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAAACsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:38:38.746Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Doctor\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Doctor\\Dashboard.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:34:00.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:22:33.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LayoutReception.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\_LayoutReception.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reception\\_LayoutReception.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Reception\\_LayoutReception.cshtml",
+              "RelativeToolTip": "Views\\Reception\\_LayoutReception.cshtml",
+              "ViewState": "AQIAAH0AAAAAAAAAAAAkwJYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:20:18.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_LayoutPatient.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Patient\\_LayoutPatient.cshtml",
+              "RelativeDocumentMoniker": "Views\\Patient\\_LayoutPatient.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Patient\\_LayoutPatient.cshtml",
+              "RelativeToolTip": "Views\\Patient\\_LayoutPatient.cshtml",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAkwEYAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:20:01.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAQwEwAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-28T23:15:51.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_LayoutDoctor.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\_LayoutDoctor.cshtml",
+              "RelativeDocumentMoniker": "Views\\Doctor\\_LayoutDoctor.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Doctor\\_LayoutDoctor.cshtml",
+              "RelativeToolTip": "Views\\Doctor\\_LayoutDoctor.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAkwC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:15:23.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADQAAAAAAAAAAAAkwE0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-28T23:06:14.595Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

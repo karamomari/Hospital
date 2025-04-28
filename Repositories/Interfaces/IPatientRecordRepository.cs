@@ -10,6 +10,9 @@ namespace Hospital.Repositories.Interfaces
         Task<PatientRecord?> GetByPatientIdAsync(string PatientId);
         Task AddAsync(PatientRecord record);
 
+        Task<List<PatientRecord>> GetListByPatientIdAsync(string patientId);
         Task SaveChangesAsync();
+        Task<int> GetMedicalRecordsCountAsync(string patientId);
+
     }
 }

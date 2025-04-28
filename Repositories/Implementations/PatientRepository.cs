@@ -13,6 +13,11 @@ namespace Hospital.Repositories.Implementations
         {
             return _context.Patients.Include(p=>p.User).Where(p => p.SSN == ssn).FirstOrDefault();
         }
+        public async Task<Patient?> GetByUserIdAsync(string userId)
+        {
+            return await _context.Patients.FirstOrDefaultAsync(p => p.UserId == userId);
+        }
+
         public async Task<int> CountAsync()
         {
             return await _context.PatientRecords.CountAsync();

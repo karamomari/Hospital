@@ -30,6 +30,14 @@ namespace Hospital.Repositories.Implementations
             return await _context.PatientRecords.Include(p=>p.Patient).Where(p=>p.PatientId== PatientId).FirstOrDefaultAsync();
         }
 
+        public async Task<List<PatientRecord>> GetListByPatientIdAsync(string patientId)
+        {
+            return await _context.PatientRecords
+                .Include(p => p.Patient)
+                .Where(p => p.PatientId == patientId)
+                .ToListAsync();
+        }
+
         public async Task AddAsync(PatientRecord record)
         {
             await _context.PatientRecords.AddAsync(record);
@@ -39,5 +47,12 @@ namespace Hospital.Repositories.Implementations
         {
             await _context.SaveChangesAsync();
         }
+
+        public async Task<int> GetMedicalRecordsCountAsync(string patientId)
+        {
+            return await _context.PatientRecords
+                .CountAsync(r => r.PatientId == patientId);
+        }
+
     }
 }

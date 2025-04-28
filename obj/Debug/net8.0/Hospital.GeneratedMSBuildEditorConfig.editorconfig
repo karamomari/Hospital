@@ -58,8 +58,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXFJlY29yZHNCeVBhdGllbnRJZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Doctor/_LayoutAdmin.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Doctor/_LayoutDoctor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdG9yXF9MYXlvdXREb2N0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Home/Index.cshtml]
@@ -68,6 +68,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Patient/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Patient/MyAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxNeUFwcG9pbnRtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Patient/MyMedicalRecords.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxNeU1lZGljYWxSZWNvcmRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Patient/_LayoutPatient.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFxfTGF5b3V0UGF0aWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Reception/AddAppointment.cshtml]
@@ -88,6 +104,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Shared/_LayoutCustem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRDdXN0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/karam/OneDrive/Desktop/New Projects/Hospital/Views/Shared/_ValidationScriptsPartial.cshtml]

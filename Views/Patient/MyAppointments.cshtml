@@ -1,0 +1,48 @@
+﻿@model PatientAppointmentsViewModel
+@{
+    ViewData["Title"] = "MyAppointments";
+    Layout = "_LayoutPatient";
+}
+<div class="container mt-5">
+    <h3>Upcoming Appointments</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model.UpcomingAppointments)
+            {
+                <tr>
+                    <td>@appointment.DoctorFullName</td>
+                    <td>@appointment.AppointmentDate.ToString("dd/MM/yyyy hh:mm tt")</td>
+                    <td>@appointment.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Past Appointments</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doctor</th>
+                <th>Appointment Date</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model.PastAppointments)
+            {
+                <tr>
+                    <td>@appointment.DoctorFullName</td>
+                    <td>@appointment.AppointmentDate.ToString("dd/MM/yyyy hh:mm tt")</td>
+                    <td>@appointment.Status</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

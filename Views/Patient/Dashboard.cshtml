@@ -1,0 +1,83 @@
+﻿@model PatientDashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_LayoutPatient";
+}
+
+<div class="container my-5">
+    <h2 class="mb-4">Welcome, @Model.FullName!</h2>
+
+    <div class="row text-center">
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Upcoming Appointments</h5>
+                    <p class="card-text display-6">@Model.UpcomingAppointmentsCount</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Past Appointments</h5>
+                    <p class="card-text display-6">@Model.PastAppointmentsCount</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Doctors Visited</h5>
+                    <p class="card-text display-6">@Model.UniqueDoctorsVisitedCount</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Medical Records</h5>
+                    <p class="card-text display-6">@Model.MedicalRecordsCount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <h4 class="mt-5 mb-3">Recent Appointments</h4>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Doctor</th>
+                    <th>Appointment Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.RecentAppointments.Any())
+                {
+                    foreach (var appointment in Model.RecentAppointments)
+                    {
+                        <tr>
+                            <td>@appointment.DoctorName</td>
+                            <td>@appointment.AppointmentDate.ToString("yyyy/MM/dd hh:mm tt")</td>
+                            <td>@appointment.Status</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="3" class="text-center">No past appointments found.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\wwwroot\\image\\18.png",
+      "PackagePath": "staticwebassets\\image\\18.png"
+    },
+    {
+      "Id": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\wwwroot\\image\\general-surgery.jpg",
+      "PackagePath": "staticwebassets\\image\\general-surgery.jpg"
+    },
+    {
+      "Id": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\wwwroot\\image\\istockphoto-151811860-612x612.jpg",
+      "PackagePath": "staticwebassets\\image\\istockphoto-151811860-612x612.jpg"
+    },
+    {
       "Id": "C:\\Users\\karam\\OneDrive\\Desktop\\New Projects\\Hospital\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
